@@ -11,7 +11,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="brave"
+export BROWSER="firefox-developer-edition"
 export READER="zathura"
 
 # ~/ Clean-up:
@@ -122,3 +122,6 @@ ex=🎯:\
 
 # Switch escape and caps if tty and no passwd required:
 sudo -n loadkeys ${XDG_DATA_HOME:-$HOME/.local/share}/larbs/ttymaps.kmap 2>/dev/null
+
+# use chromium as the 'Chrome' browser for testing in JS
+export CHROME_BIN=chromium
