@@ -7,8 +7,8 @@
 # export TERMINAL="st"
 
 # #---Basic Definitions---# #
-set $inner_gaps 15
-set $outer_gaps 15
+set $inner_gaps 5
+set $outer_gaps 5
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -33,7 +33,10 @@ for_window [instance="dropdown_dropdowncalc"] resize set 800 300
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
-
+for_window [instance="Cisco AnyConnect Secure Mobility Client"] floating enable
+for_window [instance="Microsoft Teams - Preview"] floating enable
+for_window [instance="microsoft teams - preview"] floating enable
+for_window [instance="Microsoft Teams Notification"] floating enable
 bar {
 	font pango:mono 10
 	status_command i3blocks
@@ -41,6 +44,10 @@ bar {
 	mode dock
 	modifier None
 }
+
+# #---Multi monitor---# #
+bindsym $mod+bracketleft move workspace to output left
+bindsym $mod+bracketright move workspace to output right
 
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
@@ -262,10 +269,10 @@ bindsym $mod+greater		exec --no-startup-id mpc next
 bindsym $mod+Shift+greater	exec --no-startup-id mpc next
 
 # For advancing forward/backward in an mpd song
-bindsym $mod+bracketleft 	exec --no-startup-id mpc seek -10
-bindsym $mod+Shift+bracketleft 	exec --no-startup-id mpc seek -120
-bindsym $mod+bracketright 	exec --no-startup-id mpc seek +10
-bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +120
+# bindsym $mod+bracketleft 	exec --no-startup-id mpc seek -10
+bindsym $mod+Shift+bracketleft 	exec --no-startup-id mpc seek -10
+# bindsym $mod+bracketright 	exec --no-startup-id mpc seek +10
+bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek +10
 
 # For screenshots and recording
 bindsym Print 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
@@ -357,3 +364,4 @@ bindsym XF86Documents		exec $term -e lf ~/Documents
 ##bindsym XF86Battery		exec
 ##bindsym XF86Bluetooth		exec
 bindsym XF86WLAN		exec $netrefresh
+exec_always --no-startup-id notify-send -i ~/.local/share/larbs/larbs.png 'Welcome to LARBS:' 'Press Super+F1 for the manual.' -t 10000
