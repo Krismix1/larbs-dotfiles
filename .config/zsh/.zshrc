@@ -82,4 +82,4 @@ export NVM_DIR="$HOME/.config/nvm"
 export PATH="${PATH}:/opt/google-cloud-sdk/bin"
 export PATH="${PATH}:/opt/cisco/anyconnect/bin"
 # Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
