@@ -36,7 +36,16 @@ alias \
 	xq="xbps-query" \
 	z="zathura" \
 	lg="lazygit" \
-	gg="git log --all --decorate --oneline --graph"
+	gg="git log --all --decorate --oneline --graph" \
+	ga="git add" \
+	gcm="git commit -m" \
+	gp="git push" \
+	gpl="git pull" \
+	gf="git fetch" \
+	gsh="git stash" \
+	gs="git status" \
+	gr="git rebase" \
+	grh2="git rebase -i HEAD~2"
 
 alias \
 	magit="nvim -c MagitOnly" \
