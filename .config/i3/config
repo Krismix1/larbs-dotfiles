@@ -45,10 +45,6 @@ bar {
 	modifier None
 }
 
-# #---Multi monitor---# #
-bindsym $mod+bracketleft move workspace to output left
-bindsym $mod+bracketright move workspace to output right
-
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
@@ -76,7 +72,7 @@ bindsym $mod+Insert		exec --no-startup-id showclip
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 
-bindsym $mod+w			exec --no-startup-id $BROWSER
+bindsym $mod+w			exec --no-startup-id $BROWSER; workspace $ws2
 bindsym $mod+Shift+w		exec $term -e nmtui
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 i3blocks
@@ -144,7 +140,7 @@ bindsym $mod+Shift+z		gaps outer current minus 5
 bindsym $mod+x			exec --no-startup-id xset dpms force off && mpc pause && pauseallmpv && slock &
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 
-bindsym $mod+c			exec --no-startup-id cabl
+bindsym $mod+c			exec --no-startup-id code; workspace $ws1
 bindsym $mod+Shift+c		exec --no-startup-id camtoggle
 
 bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
