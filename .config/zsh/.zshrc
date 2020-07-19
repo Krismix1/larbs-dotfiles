@@ -4,6 +4,12 @@
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
+# If the internal history needs to be trimmed to add the current command line, setting this option will cause the oldest history event that has a duplicate to be lost before losing a unique event
+setopt HIST_EXPIRE_DUPS_FIRST
+# Do not enter command lines into the history list if they are duplicates of the previous event
+setopt HIST_IGNORE_DUPS
+# remove command lines from the history list when the first character on the line is a space
+setopt HIST_IGNORE_SPACE
 stty stop undef		# Disable ctrl-s to freeze terminal.
 
 # History in cache directory:

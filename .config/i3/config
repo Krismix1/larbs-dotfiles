@@ -73,6 +73,7 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec -
 
 bindsym $mod+w			exec --no-startup-id $BROWSER; workspace $ws2
 bindsym $mod+Shift+w		exec $term -e nmtui
+bindsym $mod+Ctrl+s		exec --no-startup-id $term -e spt; workspace $ws9
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 polybar
 bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
